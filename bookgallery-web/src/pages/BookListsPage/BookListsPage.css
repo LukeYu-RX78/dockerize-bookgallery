@@ -1,0 +1,10 @@
+.coverThumbnails {
+    width: 168px;
+    height: 168px;
+    background: #EAECEE;
+    object-fit: contain;
+}
+
+.listItem {
+    text-align: left;
+}

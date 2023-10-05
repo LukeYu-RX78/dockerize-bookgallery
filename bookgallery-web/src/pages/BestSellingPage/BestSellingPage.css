@@ -1,0 +1,14 @@
+
+.bestSellingPage {
+    max-width: 900px;
+    width: 100%;
+    margin: 96px auto 0;
+}
+
+.bookCover {
+    max-width: 900px;
+    width: 100%;
+    height: 500px;
+    background: #EAECEE;
+    object-fit: contain;
+}
