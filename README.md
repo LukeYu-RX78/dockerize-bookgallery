@@ -41,7 +41,7 @@ I have tested the database, backend, and frontend and all of them run well separ
 When I used the fetch method to request the backend I couldn't get the expected data, like this:  
 ![2341696516681_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/4a1d73b2-d831-4e85-a554-fd52ab49c9e0)  
 
-because I changed the `local` host to a static ipv4 address, but this IP address is dynamic and always changing in the range.  
+because I changed the `local` host to a static ipv4 address, but this IP address is dynamic and always changing in docker.  
 So I am trying to make the IP fixed now. 😭😭😭
 
 
