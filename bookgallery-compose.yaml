@@ -1,27 +1,47 @@
+#just run `docker-compose -f bookgallery-compose.yaml up`
+version: '3'
 services:
   adminer:
     image: adminer
     restart: always
     ports:
       - 8888:8080
+    networks:
+      - my-network
+      
   db:
     image: mysql:latest
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
     volumes:
-     - "./data:/var/lib/mysql:rw"
+      - "./data:/var/lib/mysql:rw"
+    networks:
+      - my-network
+
   backend:
-    image: backend:latest
+    build:
+      context: ./bookgallery
     restart: always
     ports:
-      - 8080:8080
+      - "8080:8080"
     environment:
-    - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/bookgallery?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
-    - SPRING.DATASOURCE_USERNAME=root
-    - SPRING.DATASOURCE_PASSWORD=root
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/bookgallery?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - db
+    networks:
+      - my-network
+
   frontend:
-    image: frontend:latest
+    build:
+      context: ./bookgallery-web
     restart: always
     ports:
       - 3000:3000
+    networks:
+      - my-network
+
+networks:
+  my-network:

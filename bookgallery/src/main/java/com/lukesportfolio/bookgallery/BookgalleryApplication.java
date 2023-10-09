@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookgalleryApplication {
 
 	public static void main(String[] args) {
-		System.out.println("backend start");
+		System.out.println("backend running in docker");
 		SpringApplication.run(BookgalleryApplication.class, args);
 	}
 
