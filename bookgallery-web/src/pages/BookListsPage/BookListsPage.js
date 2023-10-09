@@ -16,7 +16,7 @@ export const BookListsPage = () => {
     const [ books, setBooks ] = useState([]);
 
     useEffect(()=>{
-        fetch("http://172.18.0.2:8080/book/getAll")
+        fetch("http://backend:8080/book/getAll")
             .then(res=>res.json())
             .then((result)=>{
                     setBooks(result);
@@ -27,7 +27,7 @@ export const BookListsPage = () => {
     console.log(books);
 
     const DownloadBook = ( id ) => {
-        fetch(`http://172.18.0.2:8080/book/incrementDownloads/${id}`,{method:"PUT"}).then(()=>{
+        fetch(`http://backend:8080/book/incrementDownloads/${id}`,{method:"PUT"}).then(()=>{
             console.log("Book downloaded.");
         })
     }
@@ -38,7 +38,7 @@ export const BookListsPage = () => {
     }
 
     const DeleteBook = ( id ) => {
-        fetch(`http://172.18.0.2:8080/book/deleteById/${id}`,{method:"DELETE"}).then(()=>{
+        fetch(`http://backend:8080/book/deleteById/${id}`,{method:"DELETE"}).then(()=>{
             console.log('I need to deleted book.');
             window.location.reload(false);
         })

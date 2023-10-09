@@ -6,7 +6,7 @@ export const BestSellingPage = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(()=>{
-        fetch("http://172.18.0.2:8080/book/getBestsellers")
+        fetch("http://backend:8080/book/getBestsellers")
             .then(res=>res.json())
             .then((result)=>{
                     setBooks(result);

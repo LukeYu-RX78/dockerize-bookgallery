@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookgalleryApplication {
 
 	public static void main(String[] args) {
+		System.out.println("backend start");
 		SpringApplication.run(BookgalleryApplication.class, args);
 	}
+
 
 }
