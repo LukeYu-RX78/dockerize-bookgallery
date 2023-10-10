@@ -20,7 +20,7 @@ use the Maven tool of IDE to generate the jar of the backend project:
 ![WeChatfebf1c9bd4c6e5cbc296fb2313e1315c](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/2bd2a71a-38bd-49c6-860c-8d69eb864e40)  
 
 ### frontend preparing:
-open the terminal under the frontend directory `bookgallery-web`, run `npm update` then run `npm install` to make sure all the dependence library in  
+open the terminal under the frontend directory `bookgallery-web`, run `npm update` then run `npm install` to make sure all the library dependences in  
 the project `nood_modules`:  
 ![WeChat45b59c3e3c8c54606b0252fa31fe0c7c](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/2a825830-2046-460e-8616-09ab56add04f)  
 
@@ -42,9 +42,11 @@ Ofcause we can also use Postman to send the HTTP request to test the backend API
 <img width="955" alt="image" src="https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/7753d545-1274-4f84-9dca-66c0db4bab64">  
 <sub>the content in web page would also change if the database is successfully update by calling the APIs with Postman<sub/>
 
-
-
-
+Let's back to the terminal and check the container and all the images that I created:
+![WeChat124c0989a03f770b9bf077f0b5ac84c3](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/88330a09-bc23-4d24-8786-7b4368f5967a)  
+<sub>Which also can be seem in docker desktop<sub/>
+![WeChatf45f58a4fab29010a31815eda792c3bc](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/b98019a5-2482-45bc-b67b-edd6161f25e1)  
+![WeChateb1ccb13fbaa68786cd1abb5f4adf5d0](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/11dcb5c8-c716-40d8-8c4a-804a661aef3b)  
 
 
 
