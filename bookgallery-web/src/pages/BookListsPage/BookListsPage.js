@@ -61,7 +61,7 @@ export const BookListsPage = () => {
                                         }} key="list-vertical-delete-o"/>,]}
                           extra={<img className="coverThumbnails" alt="book cover"  src={item.cover} />}>
                 <List.Item.Meta title={ item.name } description={ item.author }/>
-                <text className="bookIntro">{item.intro}</text>
+                <p className="bookIntro">{item.intro}</p>
         </List.Item>
         )
     }
