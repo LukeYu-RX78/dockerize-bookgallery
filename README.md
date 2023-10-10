@@ -44,9 +44,12 @@ Ofcause we can also use Postman to send the HTTP request to test the backend API
 
 Let's back to the terminal and check the container and all the images that I created:
 ![WeChat124c0989a03f770b9bf077f0b5ac84c3](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/88330a09-bc23-4d24-8786-7b4368f5967a)  
-<sub>Which also can be seem in docker desktop<sub/>
+<sub>Which also can be seen in docker desktop<sub/>
 ![WeChatf45f58a4fab29010a31815eda792c3bc](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/b98019a5-2482-45bc-b67b-edd6161f25e1)  
 ![WeChateb1ccb13fbaa68786cd1abb5f4adf5d0](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/11dcb5c8-c716-40d8-8c4a-804a661aef3b)  
+
+If we want to shut it down, just type `docker-compose -f bookgallery-compose.yaml down`:  
+![WeChat40d1aca8ee5bf92754eca1d9a124c085](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/f42fbc55-e1b6-4931-8b2b-f76ced92d51e)
 
 
 
