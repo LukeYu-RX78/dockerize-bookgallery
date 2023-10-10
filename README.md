@@ -13,37 +13,23 @@ The folder struct of the whole project:
 --bookgallery-compose.yaml  
 ```
 
-Make some configuration modifications with backend `application.properties` file:
-```
-spring.jpa.hibernate.ddl-auto=update
-#using `docker inspect '${database_id}' | grep 'IPAddress'` find the real ip in docker to replace the `localhost`
-#also adding the allowPublicKeyRetrieval and useSSL for jdbc connection
-spring.datasource.url=jdbc:mysql://172.18.0.2:3306/bookgallery?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
-spring.datasource.username=root
-spring.datasource.password=root
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.database=mysql
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
-```
+## dockerize the whole project:  
+### backend preparing:
+After clone the entire project, open the maven backend project with ide <sub>(I use IntelliJ here)</sub>  
+use the Maven tool of IDE to generate the jar of the backend project:  
+![WeChatfebf1c9bd4c6e5cbc296fb2313e1315c](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/2bd2a71a-38bd-49c6-860c-8d69eb864e40)  
 
-##dockerize while project:  
+### frontend preparing:
+open the terminal under the frontend directory `bookgallery-web`, run `npm update` then run `npm install` to make sure all the dependence library in  
+the project `nood_modules`:  
+![WeChat45b59c3e3c8c54606b0252fa31fe0c7c](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/2a825830-2046-460e-8616-09ab56add04f)  
 
-![2301696513159_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/38f4fa30-173d-48ad-9f80-fc8f8eb61330)  
-![2281696512721_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/e64ca8c7-84e6-416f-8af5-5aed79d7c734)  
-![2311696513383_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/c6037b97-e452-4303-8ca7-76b3bf94481a)  
-![2321696513400_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/a7b79484-76f0-4dc4-93fa-7e0af20fb0c4) 
-![2331696514619_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/06cae9ed-ef6f-4930-8d30-86738fae3008)  
+### dockerizing:
+Make the docker is already run, then go to the whole project directory which has the compose file `bookgallery-compose.ymal`:  
+run `docker-compose -f bookgallery-compose.yaml up`:  
+![WeChat45b59c3e3c8c54606b0252fa31fe0c7c](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/694aa074-6750-40fe-9f2f-db40c72b4663)  
+![WeChat29b9a7bdfe078f6176db15bf92378dfe](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/747dacfd-2523-4f03-a88d-715c47e9557e)  
 
-##meet some problem  
-I have tested the database, backend, and frontend and all of them run well separately   
-![2111696487462_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/2d65f330-099c-4693-bbd5-0811d56ad612)  
-
-When I used the fetch method to request the backend I couldn't get the expected data, like this:  
-![2341696516681_ pic](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/4a1d73b2-d831-4e85-a554-fd52ab49c9e0)  
-
-because I changed the `local` host to a static ipv4 address, but this IP address is dynamic and always changing in docker.  
-So I am trying to make the IP fixed now. 😭😭😭
-
-
-  
+so if we open `localhost:8888`, we can check our database on server:  
+![image](https://github.com/LukeYu-RX78/dockerize-bookgallery/assets/116868785/af2d9308-cfe4-4d46-b7a5-ebe4ac15fbd9)
 
